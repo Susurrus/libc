@@ -42,7 +42,7 @@ s! {
         pub d_off: ::off_t,
         pub d_reclen: ::c_ushort,
         pub d_type: ::c_uchar,
-        pub d_name: [::c_char; 256],
+        //pub d_name: [::c_char; 256],
     }
 
     pub struct dirent64 {
@@ -50,7 +50,7 @@ s! {
         pub d_off: ::off64_t,
         pub d_reclen: ::c_ushort,
         pub d_type: ::c_uchar,
-        pub d_name: [::c_char; 256],
+        //pub d_name: [::c_char; 256],
     }
 
     pub struct rlimit64 {
@@ -94,7 +94,7 @@ s! {
                       all(target_arch = "x86_64",
                           target_pointer_width = "32"))))]
         __align: [::c_longlong; 0],
-        size: [u8; __SIZEOF_PTHREAD_MUTEX_T],
+        //size: [u8; __SIZEOF_PTHREAD_MUTEX_T],
     }
 
     pub struct pthread_rwlock_t {
@@ -110,7 +110,7 @@ s! {
                       all(target_arch = "x86_64",
                           target_pointer_width = "32"))))]
         __align: [::c_longlong; 0],
-        size: [u8; __SIZEOF_PTHREAD_RWLOCK_T],
+        //size: [u8; __SIZEOF_PTHREAD_RWLOCK_T],
     }
 
     pub struct pthread_mutexattr_t {
@@ -142,7 +142,7 @@ s! {
         __align: [*const ::c_void; 0],
         #[cfg(not(any(target_env = "musl")))]
         __align: [::c_longlong; 0],
-        size: [u8; __SIZEOF_PTHREAD_COND_T],
+        //size: [u8; __SIZEOF_PTHREAD_COND_T],
     }
 
     pub struct pthread_condattr_t {
@@ -221,7 +221,7 @@ s! {
         pub ssi_utime: ::uint64_t,
         pub ssi_stime: ::uint64_t,
         pub ssi_addr: ::uint64_t,
-        _pad: [::uint8_t; 48],
+        //_pad: [::uint8_t; 48],
     }
 
     pub struct itimerspec {
@@ -797,15 +797,15 @@ pub const TCP_MD5SIG: ::c_int = 14;
 
 pub const PTHREAD_MUTEX_INITIALIZER: pthread_mutex_t = pthread_mutex_t {
     __align: [],
-    size: [0; __SIZEOF_PTHREAD_MUTEX_T],
+    //size: [0; __SIZEOF_PTHREAD_MUTEX_T],
 };
 pub const PTHREAD_COND_INITIALIZER: pthread_cond_t = pthread_cond_t {
     __align: [],
-    size: [0; __SIZEOF_PTHREAD_COND_T],
+    //size: [0; __SIZEOF_PTHREAD_COND_T],
 };
 pub const PTHREAD_RWLOCK_INITIALIZER: pthread_rwlock_t = pthread_rwlock_t {
     __align: [],
-    size: [0; __SIZEOF_PTHREAD_RWLOCK_T],
+    //size: [0; __SIZEOF_PTHREAD_RWLOCK_T],
 };
 pub const PTHREAD_MUTEX_NORMAL: ::c_int = 0;
 pub const PTHREAD_MUTEX_RECURSIVE: ::c_int = 1;

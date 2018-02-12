@@ -122,7 +122,7 @@ s! {
         pub mxcsr: ::c_uint,
         pub mxcr_mask: ::c_uint,
         pub st_space: [::c_uint; 32],
-        pub xmm_space: [::c_uint; 64],
+        //pub xmm_space: [::c_uint; 64],
         padding: [::c_uint; 24],
     }
 
@@ -190,7 +190,7 @@ s! {
         pub uc_stack: ::stack_t,
         pub uc_mcontext: mcontext_t,
         pub uc_sigmask: ::sigset_t,
-        __private: [u8; 512],
+        //__private: [u8; 512],
     }
 
     pub struct ipc_perm {

@@ -38,6 +38,7 @@ macro_rules! s {
     ($($(#[$attr:meta])* pub struct $i:ident { $($field:tt)* })*) => ($(
         __item! {
             #[repr(C)]
+            #[cfg_attr(feature = "derive_all", derive(Debug, Eq, Hash, PartialEq))]
             $(#[$attr])*
             pub struct $i { $($field)* }
         }

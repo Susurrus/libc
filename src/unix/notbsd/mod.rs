@@ -33,7 +33,7 @@ s! {
 
     pub struct sockaddr_un {
         pub sun_family: sa_family_t,
-        pub sun_path: [::c_char; 108]
+        //pub sun_path: [::c_char; 108]
     }
 
     pub struct sockaddr_storage {
@@ -41,8 +41,8 @@ s! {
         __ss_align: ::size_t,
         #[cfg(target_pointer_width = "32")]
         __ss_pad2: [u8; 128 - 2 * 4],
-        #[cfg(target_pointer_width = "64")]
-        __ss_pad2: [u8; 128 - 2 * 8],
+        //#[cfg(target_pointer_width = "64")]
+        //__ss_pad2: [u8; 128 - 2 * 8],
     }
 
     pub struct addrinfo {
@@ -130,12 +130,12 @@ s! {
     }
 
     pub struct utsname {
-        pub sysname: [::c_char; 65],
-        pub nodename: [::c_char; 65],
-        pub release: [::c_char; 65],
-        pub version: [::c_char; 65],
-        pub machine: [::c_char; 65],
-        pub domainname: [::c_char; 65]
+        //pub sysname: [::c_char; 65],
+        //pub nodename: [::c_char; 65],
+        //pub release: [::c_char; 65],
+        //pub version: [::c_char; 65],
+        //pub machine: [::c_char; 65],
+        //pub domainname: [::c_char; 65]
     }
 
     pub struct lconv {

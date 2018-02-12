@@ -36,7 +36,7 @@ s! {
         pub ut_id: [::c_char; 4],
 
         pub ut_user: [::c_char; __UT_NAMESIZE],
-        pub ut_host: [::c_char; __UT_HOSTSIZE],
+        //pub ut_host: [::c_char; __UT_HOSTSIZE],
         pub ut_exit: __exit_status,
 
         #[cfg(any(target_arch = "aarch64",
